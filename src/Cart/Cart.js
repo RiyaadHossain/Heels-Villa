@@ -26,6 +26,8 @@ const Cart = ({ cart, products, handleClearCart }) => {
           </div>
         </div>
       ))}
+      <small>Buy One Get 1 Free*</small>
+      <button className="offer-button">Get One For Me</button>
     </div>
   );
 };
