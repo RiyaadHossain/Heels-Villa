@@ -1,0 +1,13 @@
+nav {
+  background-color: rgb(0, 0, 0);
+  height: 80px;
+  padding: 0 50px;
+  display: flex;
+  align-items: center;
+}
+
+nav h1 {
+  font-size: 4rem;
+  font-family: "Bonheur Royale", cursive;
+  color: white;
+}
