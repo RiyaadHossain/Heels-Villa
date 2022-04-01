@@ -29,6 +29,7 @@ const Cart = ({ cart, products, handleClearCart, getOffer, offer }) => {
           <div>
             <p>
               {product.name} {product.color}
+              <span className="quantity">{product.quantity}</span>
             </p>
             <p>$ {product.price}</p>
           </div>

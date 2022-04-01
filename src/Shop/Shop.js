@@ -15,10 +15,23 @@ const Shop = () => {
   }, []);
 
   const handleAddToCart = (selectedProduct) => {
-    const newCart = [...cart, selectedProduct]
+    let newCart = []
+    console.log(products);
+    console.log(cart);
+    const exist = cart.find(product => product.id === selectedProduct.id)
+    if (!exist) {
+      selectedProduct.quantity = 1
+      newCart = [...cart, selectedProduct]
+    } else {
+      const rest = cart.filter(product => product.id !== selectedProduct.id)
+      const newQuantity = selectedProduct.quantity + 1
+      selectedProduct.quantity = newQuantity
+      newCart = [...rest, exist]
+    }
     setCart(newCart)
   };
 
+  console.log(cart);
   const handleClearCart = () => {
     setCart([])
   };
