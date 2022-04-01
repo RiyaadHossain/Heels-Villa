@@ -1,6 +1,10 @@
+const getDB = () => {
+    return JSON.parse(localStorage.getItem('shopping_Cart'))
+}
+
 const addToDB = (id) => {
   let shopping_Cart = {}; // Empty Object
-  const exist = JSON.parse(localStorage.getItem("shopping_Cart"));
+  const exist = getDB()
   if (exist) {
     shopping_Cart = exist;
     /*  Here we have two Conditions - 
@@ -17,4 +21,4 @@ const addToDB = (id) => {
   localStorage.setItem("shopping_Cart", JSON.stringify(shopping_Cart));
 };
 
-export { addToDB };
+export { addToDB, getDB };

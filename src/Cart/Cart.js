@@ -25,13 +25,13 @@ const Cart = ({ cart, products, handleClearCart, getOffer, offer }) => {
       </div>
       {cart.map((product, index) => (
         <div key={index} className="cart-item">
-          <img src={product.pairImage} alt="" />
+          <img src={product?.pairImage} alt="" />
           <div>
             <p>
-              {product.name} {product.color}
-              <span className="quantity">{product.quantity}</span>
+              {product?.name} {product?.color}
+              <span className="quantity">{product?.quantity}</span>
             </p>
-            <p>$ {product.price}</p>
+            <p>$ {product?.price}</p>
           </div>
         </div>
       ))}
