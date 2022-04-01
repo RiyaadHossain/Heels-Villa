@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Cart from "../Cart/Cart";
 import Product from "../Product/Product";
-import { addToDB, getDB } from "../Utility/Utility";
+import { addToDB, getDB, removeDB } from "../Utility/Utility";
 import "./Shop.css";
 
 const Shop = () => {
@@ -47,6 +47,8 @@ const Shop = () => {
 
   const handleClearCart = () => {
     setCart([]);
+    setOffer([])
+    removeDB()
   };
 
   const getOffer = (products) => {
