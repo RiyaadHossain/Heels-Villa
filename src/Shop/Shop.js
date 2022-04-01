@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Cart from "../Cart/Cart";
 import Product from "../Product/Product";
+import { addToDB } from "../Utility/Utility";
 import "./Shop.css";
 
 const Shop = () => {
@@ -16,8 +17,6 @@ const Shop = () => {
 
   const handleAddToCart = (selectedProduct) => {
     let newCart = []
-    console.log(products);
-    console.log(cart);
     const exist = cart.find(product => product.id === selectedProduct.id)
     if (!exist) {
       selectedProduct.quantity = 1
@@ -29,9 +28,9 @@ const Shop = () => {
       newCart = [...rest, exist]
     }
     setCart(newCart)
+    addToDB(selectedProduct.id)
   };
 
-  console.log(cart);
   const handleClearCart = () => {
     setCart([])
   };
